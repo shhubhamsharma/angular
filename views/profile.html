@@ -1,0 +1,50 @@
+<div class="container" ng-controller="profileController">
+        <div class="alert alert-danger" ng-if="error">
+                <strong>{{msg}}!</strong> 
+            </div>
+            <div class="alert alert-success" ng-if="success">
+                    <strong>{{msg}}!</strong> 
+                </div>
+<form method="POST">
+    <div class="row">
+    <legend class="col-md-6">Signup</legend>
+    <legend class="col-md-6"> <a ng-click="disabled=!disabled">Edit</a></legend>
+</div>
+    <div class="form-group">
+        <label for="">Name</label>
+        <input readonly type="text" class="form-control" id="" placeholder="Name" ng-model="payload.name" required>
+    </div>
+    <div class="row">
+
+    <div class="form-group col-md-6">
+            <label for="">Email</label>
+            <input readonly type="email" class="form-control" id="" placeholder="Email" ng-model="payload.email" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="">Phone Number</label>
+            <input ng-disabled="!disabled" type="tel" class="form-control" id="" placeholder="Phone Number" ng-model="payload.phone" required>
+        </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">Password</label>
+                <input ng-disabled="!disabled" type="password" class="form-control" id="" placeholder="Password" ng-model="payload.password" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Confirm Password</label>
+                <input ng-disabled="!disabled" type="password" class="form-control" id="" placeholder="Password" ng-model="cnfpwd" required>
+            </div>
+        </div>
+            <div class="alert alert-warning" ng-if="cnfpwd!=payload.password">
+                <strong>Warning!</strong> Password did not match.
+            </div>
+            <div class="form-group">
+                <label for="">Referral ID</label>
+                <input type="text" readonly class="form-control" id="" placeholder="Referral ID" ng-model="payload.referral">
+            </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+</form>
+
+
+</div>
