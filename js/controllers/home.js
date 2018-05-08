@@ -5,6 +5,6 @@ homeController.$inject = ["$scope", "$rootScope", "$http", "$window", "Service",
     function homeController($scope, $rootScope, $http, $window, Service,$state)  {
       $scope.userData=JSON.parse($window.localStorage['userData']);
       console.log($rootScope.userData)
-      $scope.referralLink=$window.location.origin+"/"+$rootScope.userData.uniqueid;
+      $scope.referralLink=$window.location.origin+"/#/login/"+$rootScope.userData.uniqueid;
       
     }
